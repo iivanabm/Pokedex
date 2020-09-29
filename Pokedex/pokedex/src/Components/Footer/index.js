@@ -7,7 +7,7 @@ const StyledFooter = styled.div`
     position: absolute;
     width: 100%;
     height: 30%;
-    top: 460%;
+    top: 300%;
     background-color: #3f51b5;
 
     @media (min-width: 320px) and (max-width: 1250px){

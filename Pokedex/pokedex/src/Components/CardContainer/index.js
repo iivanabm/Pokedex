@@ -10,6 +10,11 @@ const Container = styled.div`
     padding: 2% 5%;
     margin-top: 2%;
     gap: 8%;
+  
+    
+    @media (max-width: 700px) {
+        margin-top: 8%;
+    }
   `;
 
 const FrontItem = styled.div`
@@ -34,13 +39,12 @@ const CatchButton = styled(Button)`
 
 
 const imageUrlFront = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/";
-const imageUrlBack = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/";
 
 
 class CardContainer extends Component {
     state = {
         pokemons: [],
-        caughtPokemons: []
+        caughtPokemons: [],
     }
 
     getPokemon = () => {
@@ -49,13 +53,16 @@ class CardContainer extends Component {
             .then((response) => {
                 this.setState({ pokemons: response.data.results })
 
+
             })
     }
 
 
     componentDidMount() {
         this.getPokemon();
+
     }
+
 
     componentDidUpdate(prevProps) {
 
@@ -80,11 +87,8 @@ class CardContainer extends Component {
                     const splitUrl = pokemon.url.split('/');
                     const id = splitUrl[splitUrl.length - 2];
                     return <FrontItem> <PokemonTitle>{id}. {pokemon.name}</PokemonTitle>
-                        <img src={`${imageUrlFront}${id}.png`} />
-                        <img src={`${imageUrlBack}${id}.png`} />
-                        <p>Tipo: </p>
-                        <p>Peso: </p>
-                        <p>Altura: </p>
+                        <img src={`${imageUrlFront}${id}.png`} /><br/>
+
                         <CatchButton
                             onClick={() => this.onClickCatch(pokemon)} variant="contained" color="primary">Capturar!
                         </CatchButton>
