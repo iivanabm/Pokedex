@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Pokedex from "./Components/Pokedex.js";
-import Card from "./Components/Card.js";
-import CardContainer from "./Components/CardContainer/CardContainer.js";
+import Pokedex from "./Components/Pokedex";
+import CardContainer from "./Components/CardContainer/index.js";
+import Footer from "./Components/Footer";
 
 class App extends Component {
   state = {
@@ -24,10 +24,8 @@ class App extends Component {
     return (
       <div>
         <Pokedex offsetNumber={this.state.offsetNumber} onClickPreviousButton={this.onClickPreviousButton} onClickNextButton={this.onClickNextButton}></Pokedex>
-        <CardContainer offsetNumber={this.state.offsetNumber}>
-          <Card></Card>
-        </CardContainer>
-
+        <CardContainer offsetNumber={this.state.offsetNumber}></CardContainer>
+        <Footer></Footer>
       </div>
     );
   }
