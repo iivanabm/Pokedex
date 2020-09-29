@@ -18,7 +18,7 @@ const Pokemon = styled.li`
 
     @media (max-width: 700px) {
         position: absolute;
-        top: 30%;
+        top: 31%;
         left: 2%;
         width: 40%;
     }

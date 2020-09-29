@@ -4,7 +4,7 @@ import styled from "styled-components";
 import pokedexImage from "../../assets/pokedexImage.png";
 import pokeball from "../../assets/pokeball.png";
 
-const Title = styled.h1`
+const Title = styled.div`
     color: white;
     text-align: center;
 `;
@@ -16,7 +16,7 @@ const PreviousButton = styled(Button)`
 
     @media (max-width: 700px) {
         position: absolute;
-        top: 10px;
+        top: 35px;
         left: 30%;
     }
 `;
@@ -27,7 +27,7 @@ const NextButton = styled(Button)`
 
     @media (max-width: 700px) {
         position: absolute;
-        top: 10px;
+        top: 35px;
         left: 32%;
     }
 `;
@@ -37,7 +37,7 @@ const PokeballContainer = styled.div`
     display: inline;
     top: 8%;
 
-    @media (min-width: 380px) and (max-width: 1010px){
+    @media (min-width: 200px) and (max-width: 1010px){
         display: none;
     }
 `;
